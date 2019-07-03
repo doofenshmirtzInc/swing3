@@ -1,4 +1,4 @@
-package swing2;
+package gui;
 
 public interface StringListener {
 

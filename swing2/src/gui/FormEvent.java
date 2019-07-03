@@ -1,4 +1,4 @@
-package swing2;
+package gui;
 
 import java.util.EventObject;
 
@@ -11,6 +11,11 @@ public class FormEvent extends EventObject{
 	//want all communication to go through the MainFrame as the go-between
 	private String name;
 	private String occupation;
+	private int ageCategory;
+	private String empCat;
+	private String taxID;
+	private boolean usCitizen;
+	private String gender;
 
 	public FormEvent(Object source) {
 		//EventObject has a constructor that accepts an Object type
@@ -19,11 +24,16 @@ public class FormEvent extends EventObject{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public FormEvent(Object source, String name, String occupation) {
+	public FormEvent(Object source, String name, String occupation, int ageCat, String empCat, String taxID, boolean usCitizen, String gender) {
 		super(source);
 		
 		this.name = name;
 		this.occupation = occupation;
+		this.ageCategory = ageCat;
+		this.empCat = empCat;
+		this.taxID = taxID;
+		this.usCitizen = usCitizen;
+		this.gender = gender;
 	}
 	
 	
@@ -43,6 +53,26 @@ public class FormEvent extends EventObject{
 
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
+	}
+	
+	public int getAgeCategory() {
+		return ageCategory;
+	}
+	
+	public String getEmploymentCategory() {
+		return this.empCat;
+	}
+	
+	public String getTaxID() {
+		return this.taxID;
+	}
+	
+	public boolean isUSCitizen() {
+		return usCitizen;
+	}
+	
+	public String getGender() {
+		return this.gender;
 	}
 
 }
