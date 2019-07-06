@@ -1,7 +1,15 @@
 package dataModel;
 
-public class Person {
+import java.io.Serializable;
 
+public class Person implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 201912883111592449L;
+	
+	
 	private static int count = 0;
 	private int id;
 	private String name;
@@ -13,7 +21,7 @@ public class Person {
 	private String occupation;
 	
 	
-	public Person(String name, String occupation, AgeCategory ageCat, EmploymentCategory empCat, String taxId, boolean usCitizen, Gender gender) {
+	public Person(String name, String occupation, AgeCategory ageCat, EmploymentCategory empCat, boolean usCitizen, String taxId, Gender gender) {
 		
 		this.name = name;
 		this.occupation = occupation;

@@ -38,6 +38,7 @@ public class FormPanel extends JPanel{
 	
 	private JRadioButton maleRadio;
 	private JRadioButton femaleRadio;
+	private JRadioButton otherRadio;
 	private ButtonGroup genderGroup;
 	 
 	public FormPanel() {
@@ -56,6 +57,7 @@ public class FormPanel extends JPanel{
 		taxLabel = new JLabel("Tax ID: ");
 		maleRadio = new JRadioButton("Male");
 		femaleRadio = new JRadioButton("Female");
+		otherRadio = new JRadioButton("Other");
 		genderGroup = new ButtonGroup();
 		submitButton = new JButton("Submit");
 		
@@ -68,8 +70,10 @@ public class FormPanel extends JPanel{
 		nameLabel.setLabelFor(nameField);
 		
 		//sets string that will be received when one is pressed/selected
-		maleRadio.setActionCommand("male");
-		femaleRadio.setActionCommand("female");
+		maleRadio.setActionCommand("Male");
+		femaleRadio.setActionCommand("Female");
+		otherRadio.setActionCommand("Other");
+
 		
 		maleRadio.setSelected(true);
 		
@@ -77,6 +81,7 @@ public class FormPanel extends JPanel{
 		
 		genderGroup.add(maleRadio);
 		genderGroup.add(femaleRadio);
+		genderGroup.add(otherRadio);
 		
 		//set up tax ID
 		
@@ -279,11 +284,22 @@ public class FormPanel extends JPanel{
 		gc.gridy++;
 
 		gc.weightx = 1;
-		gc.weighty = .1;
+		gc.weighty = .01;
 
 		gc.gridx = 1;
 		gc.anchor = GridBagConstraints.FIRST_LINE_START;
 		add(femaleRadio, gc);
+		
+		//**********************Fourth Row*****************************
+		
+		gc.gridy++;
+
+		gc.weightx = 1;
+		gc.weighty = .1;
+
+		gc.gridx = 1;
+		gc.anchor = GridBagConstraints.FIRST_LINE_START;
+		add(otherRadio, gc);
 		
 		//***********************Fifth Row*****************************
 		
